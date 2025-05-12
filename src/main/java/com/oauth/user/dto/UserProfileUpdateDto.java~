@@ -1,0 +1,4 @@
+package com.oauth.user.dto;
+
+public class UserProfileUpdateDto {
+}

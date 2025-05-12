@@ -1,0 +1,5 @@
+package com.oauth.user.service;
+
+public class ImageUploadService {
+    
+}

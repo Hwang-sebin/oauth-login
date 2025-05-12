@@ -1,0 +1,31 @@
+package com.oauth.member.domain;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Document(collection = "members") // @Entity → @Document
+public class User {
+    @Id // JPA → MongoDB 전용
+    private String id; // Long → String 타입 변경
+
+    private String name;
+
+    private String email; // @Column 제거 (MongoDB는 스키마리스)
+
+    private String password;
+
+    @Builder.Default
+    private Role role = Role.USER; // @Enumerated 제거 (MongoDB는 기본 문자열 저장)
+
+    private SocialType socialType;
+
+    private String socialId;
+}

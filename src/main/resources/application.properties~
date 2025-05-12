@@ -1,0 +1,15 @@
+spring.application.name=oauth
+spring:
+config:
+activate:
+on-profile: dev
+
+data:
+mongodb:
+uri: mongodb+srv://atlas_user:atlas123@mycluster.qjupvtn.mongodb.net/oauthdb?retryWrites=true&w=majority  # MongoDB ??
+
+logging:
+level:
+root: INFO
+org.springframework.security: DEBUG
+org.springframework.data.mongodb.core.MongoTemplate: DEBUG  # MongoDB ?? ?? ??
